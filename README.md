@@ -23,9 +23,9 @@ Some processing is done to the text before it gets sent off.
 | class  | description                                                      |
 |--------|------------------------------------------------------------------|
 | ichi   | A link to the [ichi.moe](https://ichi.moe) sentence parsing site |
-| deepl  | A link through to the DeepL language translation site            |
-| jisho  | Links through to the Jisho dicationary                           |
-| google | Asks for the google definition                                   |
+| deepl  | A link through to the [DeepL](https://www.deepl.com/translator) language translation site |
+| jisho  | Links through to the [Jisho](https://jisho.org/) dictionary |
+| google | Asks for the [Google](https://google.com) definition |
 
 ## Compressed Javascript
 
