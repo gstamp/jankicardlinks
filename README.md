@@ -2,6 +2,8 @@
 
 This is some quick javascript you can add to your Japanese Anki cards that lets you pass through your expression field to external sites. There are currently four different links provided but it should be relatively easy to add new types.
 
+![](example.png)
+
 To use this simply add some HTML to your cards to represent the links. This might look something like the following:
 
 ```html
