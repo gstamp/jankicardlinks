@@ -12,22 +12,14 @@ function externalLink(clazz, text, makeUrl) {
 }
 
 externalLink("ichi", "ichi.moe", function (strippedText) {
-  return (
-    "https://ichi.moe/cl/qr/?q=" + encodeURIComponent(strippedText) + "&r=htr"
-  );
+  return "https://ichi.moe/cl/qr/?q=" + encodeURIComponent(strippedText) + "&r=htr";
 });
 externalLink("deepl", "deepl", function (strippedText) {
-  return (
-    "https://www.deepl.com/translator#ja/en/" + encodeURIComponent(strippedText)
-  );
+  return "https://www.deepl.com/translator#ja/en/" + encodeURIComponent(strippedText);
 });
 externalLink("jisho", "jisho", function (strippedText) {
   return "https://jisho.org/search/" + encodeURIComponent(strippedText);
 });
 externalLink("google", "google", function (strippedText) {
-  return (
-    "https://www.google.com/search?q=" +
-    encodeURIComponent(strippedText) +
-    "意味"
-  );
+  return "https://translate.google.com/?sl=auto&tl=en&text=" + encodeURIComponent(strippedText) + "&op=translate";
 });
