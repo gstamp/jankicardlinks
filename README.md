@@ -28,6 +28,7 @@ Some processing is done to the text before it gets sent off.
 | deepl  | A link through to the [DeepL](https://www.deepl.com/translator) language translation site |
 | jisho  | Links through to the [Jisho](https://jisho.org/) dictionary |
 | google | Asks for the [Google Translate](https://translate.google.com) definition |
+| immersionkit | Link to immersion kit (use for words rather than full sentences). |
 
 ## Compressed Javascript
 
@@ -35,6 +36,6 @@ Aside from adding the required HTML to your cards you'll need to add some Javasc
 
 ```javascript
 <script>
-function externalLink(e,n,t){for(var o=/\[.*?\]/g,r=/\s+/g,a=document.getElementsByClassName(e),l=0;l<a.length;l++){var i=t(a[l].textContent.replace(o,"").replace(r,""));a[0].innerHTML="<a href='"+i+"'>"+n+"</a>"}}externalLink("ichi","ichi.moe",function(e){return"https://ichi.moe/cl/qr/?q="+encodeURIComponent(e)+"&r=htr"}),externalLink("deepl","deepl",function(e){return"https://www.deepl.com/translator#ja/en/"+encodeURIComponent(e)}),externalLink("jisho","jisho",function(e){return"https://jisho.org/search/"+encodeURIComponent(e)}),externalLink("google","google",function(e){return"https://translate.google.com/?sl=auto&tl=en&text="+encodeURIComponent(e)+"&op=translate"});
+function externalLink(e,n,t){for(var o=/\[.*?\]/g,r=/\s+/g,i=document.getElementsByClassName(e),a=0;a<i.length;a++){var c=t(i[a].textContent.replace(o,"").replace(r,""));i[0].innerHTML="<a href='"+c+"'>"+n+"</a>"}}externalLink("ichi","ichi.moe",function(e){return"https://ichi.moe/cl/qr/?q="+encodeURIComponent(e)+"&r=htr"}),externalLink("deepl","deepl",function(e){return"https://www.deepl.com/translator#ja/en/"+encodeURIComponent(e)}),externalLink("jisho","jisho",function(e){return"https://jisho.org/search/"+encodeURIComponent(e)}),externalLink("google","google",function(e){return"https://translate.google.com/?sl=auto&tl=en&text="+encodeURIComponent(e)+"&op=translate"}),externalLink("immersionkit","immersionkit",function(e){return"https://www.immersionkit.com/dictionary?keyword="+encodeURIComponent(e)});
 </script>
 ```
