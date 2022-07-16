@@ -31,3 +31,6 @@ externalLink("immersionkit", "immersionkit", function (strippedText) {
 externalLink("sentencesearch", "sentencesearch", function (strippedText) {
     return "https://sentencesearch.neocities.org/#" + encodeURIComponent(strippedText);
 });
+externalLink("kanshudo", "kanshudo", function (strippedText) {
+    return "https://www.kanshudo.com/searcht?q=" + encodeURIComponent(strippedText);
+});
