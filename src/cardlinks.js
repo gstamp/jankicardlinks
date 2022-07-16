@@ -1,10 +1,12 @@
 function externalLink(clazz, text, makeUrl) {
     var stripSquares = /\[.*?\]/g;
     var stripSpace = /\s+/g;
+    var stripCurlyBraces = /\{.*?\}/g;
     var elems = document.getElementsByClassName(clazz);
     for (var i = 0; i < elems.length; i++) {
         var strippedText = elems[i].textContent.replace(stripSquares, "");
         strippedText = strippedText.replace(stripSpace, "");
+        strippedText = strippedText.replace(stripCurlyBraces, "");
 
         var link = makeUrl(strippedText);
         elems[0].innerHTML = "<a href='" + link + "'>" + text + "</a>";
@@ -25,4 +27,7 @@ externalLink("google", "google", function (strippedText) {
 });
 externalLink("immersionkit", "immersionkit", function (strippedText) {
     return "https://www.immersionkit.com/dictionary?keyword=" + encodeURIComponent(strippedText);
+});
+externalLink("sentencesearch", "sentencesearch", function (strippedText) {
+    return "https://sentencesearch.neocities.org/#" + encodeURIComponent(strippedText);
 });

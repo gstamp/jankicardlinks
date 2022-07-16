@@ -21,6 +21,7 @@ Some processing is done to the text before it gets sent off.
 
 - All whitespace is removed
 - All text between square braces is removed
+- All text between curly braces is removed
 
 | class  | description                                                      |
 |--------|------------------------------------------------------------------|
@@ -29,6 +30,7 @@ Some processing is done to the text before it gets sent off.
 | jisho  | Links through to the [Jisho](https://jisho.org/) dictionary |
 | google | Asks for the [Google Translate](https://translate.google.com) definition |
 | immersionkit | Link to immersion kit (use for words rather than full sentences). |
+| sentencesearch | Link to sentencesearch (use for words rather than full sentences). |
 
 ## Compressed Javascript
 
@@ -36,6 +38,6 @@ Aside from adding the required HTML to your cards you'll need to add some Javasc
 
 ```javascript
 <script>
-function externalLink(e,n,t){for(var o=/\[.*?\]/g,r=/\s+/g,i=document.getElementsByClassName(e),a=0;a<i.length;a++){var c=t(i[a].textContent.replace(o,"").replace(r,""));i[0].innerHTML="<a href='"+c+"'>"+n+"</a>"}}externalLink("ichi","ichi.moe",function(e){return"https://ichi.moe/cl/qr/?q="+encodeURIComponent(e)+"&r=htr"}),externalLink("deepl","deepl",function(e){return"https://www.deepl.com/translator#ja/en/"+encodeURIComponent(e)}),externalLink("jisho","jisho",function(e){return"https://jisho.org/search/"+encodeURIComponent(e)}),externalLink("google","google",function(e){return"https://translate.google.com/?sl=auto&tl=en&text="+encodeURIComponent(e)+"&op=translate"}),externalLink("immersionkit","immersionkit",function(e){return"https://www.immersionkit.com/dictionary?keyword="+encodeURIComponent(e)});
+function externalLink(e,n,t){for(var o=/\[.*?\]/g,r=/\s+/g,i=/\{.*?\}/g,c=document.getElementsByClassName(e),a=0;a<c.length;a++){var s=c[a].textContent.replace(o,""),s=t(s=(s=s.replace(r,"")).replace(i,""));c[0].innerHTML="<a href='"+s+"'>"+n+"</a>"}}externalLink("ichi","ichi.moe",function(e){return"https://ichi.moe/cl/qr/?q="+encodeURIComponent(e)+"&r=htr"}),externalLink("deepl","deepl",function(e){return"https://www.deepl.com/translator#ja/en/"+encodeURIComponent(e)}),externalLink("jisho","jisho",function(e){return"https://jisho.org/search/"+encodeURIComponent(e)}),externalLink("google","google",function(e){return"https://translate.google.com/?sl=auto&tl=en&text="+encodeURIComponent(e)+"&op=translate"}),externalLink("immersionkit","immersionkit",function(e){return"https://www.immersionkit.com/dictionary?keyword="+encodeURIComponent(e)}),externalLink("sentencesearch","sentencesearch",function(e){return"https://sentencesearch.neocities.org/#"+encodeURIComponent(e)});
 </script>
 ```
